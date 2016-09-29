@@ -29,3 +29,53 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+//get
+Route::get('base',function(){
+	return 'Hello World';
+});
+//post
+Route::post('base2',function(){
+	return 'Hello World';
+});
+
+//多请求路由
+Route::match(['get','post'],'multy1',function(){
+	return 'multy1';
+});
+
+Route::any('multy2',function(){
+	return 'multy2';
+});
+//路由参数
+// Route::get('user/{id}',function($id){
+
+// return 'user->id'.$id;
+// });
+
+// Route::get('user/{name?}',function($name){
+
+// return 'user->name:'.$name;
+// })->where('name','[A-Za-z]+');
+// Route::get('user/{id}/{name?}',function($id,$name){
+
+// 	return 'user->id'.$id.'->name:'.$name;
+// })->where(['id'=>'[0-9]+','name'=>'[A-Za-z]+']);
+
+//路由别名
+Route::get('user/center',['as'=>'center',function(){
+	return route('center');
+}]);
+//路由群组
+Route::group(['prefix'=>'member'],function(){
+	Route::get('user/center',['as'=>'center',function(){
+		return route('center');
+	}]);
+	Route::any('multy2',function(){
+		return 'multy3';
+	});
+});
+
+//路由输出视图
+Route::get('view',function(){
+	return view('welcome');
+});
