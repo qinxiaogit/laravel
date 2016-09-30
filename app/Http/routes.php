@@ -29,6 +29,7 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+<<<<<<< Updated upstream
 //get
 Route::get('base',function(){
 	return 'Hello World';
@@ -79,3 +80,11 @@ Route::group(['prefix'=>'member'],function(){
 Route::get('view',function(){
 	return view('welcome');
 });
+=======
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+});
+>>>>>>> Stashed changes
