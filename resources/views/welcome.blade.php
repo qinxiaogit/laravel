@@ -6,8 +6,6 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Welcome</div>
-
-<<<<<<< Updated upstream
         <style>
             html, body {
                 height: 100%;
@@ -42,11 +40,10 @@
         <div class="container">
             <div class="content">
                 <div class="title">Laravel 6</div>
-=======
                 <div class="panel-body">
                     Your Application's Landing Page.
                 </div>
->>>>>>> Stashed changes
+
             </div>
         </div>
     </div>
