@@ -43,7 +43,26 @@
                 <div class="panel-body">
                     Your Application's Landing Page.
                 </div>
+                <p>{{time()}}</p>
+                <p>{{var_dump($arry)}}</p>
+                {{--模板注释--}}
+                @if($name=="xiao")
+                    I'm = xiao
+                @elseif($name=="xxxx")
+                    ming
 
+                @else
+                    who ?
+                 @endif
+                @if(in_array($name,$arry))
+                    true
+                    @else
+                false
+                    @endif
+
+                @for($i=0;$i<10;$i++)
+                    {{$i}}
+                @endfor
             </div>
         </div>
     </div>
