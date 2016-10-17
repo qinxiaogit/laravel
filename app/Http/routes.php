@@ -81,6 +81,21 @@ Route::get('view',function(){
 	return view('welcome');
 });
 
+Route::get('/testUrl','HomeController@testUrl');
+Route::group(['middleware'=>['web']],function (){
+    Route::any('sesion',['uses'=>'HomeController@sesion']);
+    Route::any('sesiona',[
+        'as'=>'xm',
+        'uses'=>'HomeController@sesiona']);
+    Route::any('response',['uses'=>'HomeController@response']);
+});
+Route::get('/active0','HomeController@active0');
+Route::group(['middleware'=>['active']],function(){
+    Route::get('/active1','HomeController@active1');
+    Route::get('/active2','HomeController@active2');
+});
+
+
 //Route::group(['middleware' => 'web'], function () {
 //    Route::auth();
 //

@@ -7,6 +7,7 @@ use App\Student;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -72,5 +73,77 @@ class HomeController extends Controller
         dd($res);
         die();
         return view('welcome',['arry'=>$arry,'name'=>$name]);
+    }
+    public function testUrl(Request $request){
+        //取值
+
+        if($request->has('name')){
+            echo $request->input('name');
+        } else{
+            echo 'ooo';
+        }       //dd($request);
+        //判断请求类型
+        echo $request->method();
+
+        if($request->isMethod('get')){
+            echo 'YES';
+        }else{
+            echo 'no';
+        }
+        if($request->ajax()){
+            echo 'yes';
+        }
+        echo $request->url();
+    }
+    public function sesion(Request $request){
+        //HTTP
+//        $request->session()->put('xiao','123456789');
+//        dd($request->session()->all());
+        //SESSION
+//        session()->put('xiao','萌萌哒');
+//        echo session()->get('xiao');
+        //Session
+       // Session::put('wo','我是你大爷');
+       // echo Session::get('wo');
+       // $request->session()->put('hh',['test'=>'name','nanme'=>'覃枭']);
+        Session::push('student','student');
+        Session::push('student','student1');
+        Session::push('student','student2');
+    }
+    public function sesiona(Request $request){
+        //echo Session::get('wo2','xxoo');
+        //dd( Session::get('student'));
+       //dd(Session::pull('student'));
+       // Session::flush();
+        if(Session::has('student')){
+            //dd(Session::pull('student'));
+            //Session::forget('student');
+        }else{
+           // dd(Session::all());
+        }
+        //return redirect()->back();
+       dd(Session::get('message','xxoo'));
+    }
+    public function response(){
+        $data = [
+            'data'=>'xiaoming',
+            'id'=>12,
+            'age'=>18,
+        ];
+        //return response()->json($data);
+        //return redirect('sesiona');
+       // return redirect('sesiona')->with('message','我是快闪数据');
+      //  return redirect()->action('HomeController@sesion')->with('message','我是快闪数据');
+        return redirect()->route('xm')->with('message','我是快闪数据');
+    }
+    //中间键
+    public function active0(){
+        return '活动就要开始了';
+    }
+    public function active1(){
+        return '活动已经开始';
+    }
+    public function active2(){
+        return '活动结束了';
     }
 }
