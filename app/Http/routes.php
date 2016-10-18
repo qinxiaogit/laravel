@@ -101,3 +101,6 @@ Route::group(['middleware'=>['active']],function(){
 //
 //    Route::get('/home', 'HomeController@index');
 //});
+
+//Route::get('/student/','StudentController@index');
+Route::get('/student/',['uses'=>'StudentController@index']);
