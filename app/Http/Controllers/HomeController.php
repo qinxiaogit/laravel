@@ -51,9 +51,9 @@ class HomeController extends Controller
 //        dd($res);
 
         //使用模型新增数据
-        $student = new Student();
-        $student->name = 'qinxiao';
-        $student->age = 20;
+       // $student = new Student();
+        //$student->name = 'qinxiao';
+        //$student->age = 20;
 
 //       $res =  $student->save(['name','age']);
         //$res = $student->create(['name'=>'xiaoming','age'=>18]);
@@ -69,9 +69,9 @@ class HomeController extends Controller
         //$res = $student->find(1)->delete();
        // $res = $student->destroy(2,3,4);
         //$res = $student->destroy([2,3,4,5]);
-        $res = $student->where('age','=','18')->delete();
-        dd($res);
-        die();
+        //$res = $student->where('age','=','18')->delete();
+        //dd($res);
+        //die();
         return view('welcome',['arry'=>$arry,'name'=>$name]);
     }
     public function testUrl(Request $request){
