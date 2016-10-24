@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Student;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,7 +17,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-      //  $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -30,7 +29,14 @@ class HomeController extends Controller
     {
         $arry = ['name'=>'xiaoming','sex'=>0];
         $name = "xiao";
-//        $res = Student::all();
+        $user = new User();
+        $user->name = 'xiao';
+        $user->phone = '18227755589';
+        $user->save();
+
+        $res = $user->all();
+
+        print_r($res);die();
 //        foreach ($res as $value){
 //            var_dump($value);
 //            //print_r('1');

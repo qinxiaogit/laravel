@@ -1,4 +1,4 @@
-@extends('master')
+@extends('/common/layout')
 
 @section('title','登录')
 @section('content')

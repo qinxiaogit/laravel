@@ -3,7 +3,7 @@
 <header>
     <meta charset="utf-8">
     <title>laravel表单</title>
-    <link rel="stylesheet" href="{{asset('static/bootstrap/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
 </header>
 <body>
 <div class="container">
@@ -18,9 +18,9 @@
         </div>
     </div>
 </div>
-<script href="{{asset('static/bootstrap/js/bootstrap.js')}}" ></script>
-<script href="{{asset('static/bootstrap/js/jquery-3.1.1.min.js')}}" ></script>
-@section('js')
+<script href="{{asset('assets/js/bootstrap.js')}}" ></script>
+<script href="{{asset('assets/js/jquery-3.1.1.min.js')}}" ></script>
+@section('my-js')
     @show
 </body>
 </html>

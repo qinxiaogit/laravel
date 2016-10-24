@@ -96,15 +96,12 @@
 // });
 
 
-// //Route::group(['middleware' => 'web'], function () {
-// //    Route::auth();
-// //
-// //    Route::get('/home', 'HomeController@index');
-// //});
+ Route::group(['middleware' => 'web'], function () {
+     Route::auth();
+     Route::get('/', 'HomeController@index');
+ });
 
 // //Route::get('/student/','StudentController@index');
 // Route::get('/student/',['uses'=>'StudentController@index']);
 
-Route::get('/',function(){
-	return view('home');
-});
+//Route::get('/','HomeController@index');
