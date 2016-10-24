@@ -19,7 +19,7 @@
     </div>
 </div>
 <script href="{{asset('assets/js/bootstrap.js')}}" ></script>
-<script href="{{asset('assets/js/jquery-3.1.1.min.js')}}" ></script>
+<script href="{{asset('assets/js/jquery-3.1.1.js')}}" ></script>
 @section('my-js')
     @show
 </body>

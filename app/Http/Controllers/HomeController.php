@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\User;
+use App\Model\MyUser;
+use App\Model\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -17,26 +18,31 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $arry = ['name'=>'xiaoming','sex'=>0];
         $name = "xiao";
-        $user = new User();
-        $user->name = 'xiao';
-        $user->phone = '18227755589';
-        $user->save();
+        $user = new MyUser();
+//        $user->name = 'xiao';
+//        $user->phone = '18227755589';
+//        $user->email = '346243025@qq.com';
+//        $user->password = '123456';
+
+        $user->insert(['phone'=>'18227755589',
+                        'name'=>'qinxiao',
+                        'email'=>'346243025@qq.com',
+        ]);
+        //$user->save();
 
         $res = $user->all();
-
-        print_r($res);die();
 //        foreach ($res as $value){
 //            var_dump($value);
 //            //print_r('1');
@@ -151,5 +157,10 @@ class HomeController extends Controller
     }
     public function active2(){
         return '活动结束了';
+    }
+     */
+    public function index(){
+
+        return view('home');
     }
 }

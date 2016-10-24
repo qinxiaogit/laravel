@@ -1,12 +1,10 @@
-@extends('/common/layout')
+@extends('master')
 
-@section('title','登录')
+@section('title','文档系统')
 @section('content')
-    <p>登录</p>
+    <div class="table"></div>
 @endsection
 @section('my-js')
 <script type="text/javascript">
-    
-    alert('AAA');
 </script>
 @endsection
