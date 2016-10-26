@@ -101,6 +101,8 @@
      Route::get('/', 'HomeController@index');
  });
 
+Route::get('/service/vcode/getcode',['uses'=>'Service\VcodeController@getVcode']);
+
 // //Route::get('/student/','StudentController@index');
 // Route::get('/student/',['uses'=>'StudentController@index']);
 
