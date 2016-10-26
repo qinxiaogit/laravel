@@ -1,26 +1,21 @@
-<!Doctype html>
-<html lang="zh-CN">
-<header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@yield('title')</title>
     <meta charset="utf-8">
-    <title>laravel表单</title>
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
-</header>
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            @section('xiaoming')
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">学生列表</a>
-                    <a href="#" class="list-group-item">新增</a>
-                </div>
-            @show
-        </div>
-    </div>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/weui.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+</head>
+<body ontouchstart>
+<div class="content">
+    <div class="weui-cells__title">Laravel5</div>
+@yield('content')
 </div>
-<script href="{{asset('assets/js/bootstrap.js')}}" ></script>
-<script href="{{asset('assets/js/jquery-3.1.1.js')}}" ></script>
-@section('my-js')
-    @show
 </body>
+<script type="text/javascript" src="{{asset('assets/js/jquery-3.1.1.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/vue.js')}}"></script>
+@yield('my-js')
 </html>
