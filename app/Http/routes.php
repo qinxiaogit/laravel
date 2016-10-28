@@ -99,6 +99,7 @@
  Route::group(['middleware' => 'web'], function () {
      Route::auth();
      Route::get('/', 'HomeController@index');
+     Route::get('/rollback', 'HomeController@rollback');
  });
 
 Route::get('/service/vcode/getcode',['uses'=>'Service\VcodeController@getVcode']);

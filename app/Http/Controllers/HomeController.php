@@ -163,4 +163,16 @@ class HomeController extends Controller
 
         return view('home');
     }
+    public function rollback(){
+//        DB::transaction(function (
+//        ){
+            //'insert into users (id, name) values (?, ?)', [1, 'Dayle'
+           // DB::insert('insert into myUser (name) values (?)',['xx']);
+          //  dd(MyUser::all());
+
+            //DB::insert('insert into users (id, name) values (?, ?)', [1, 'Dayle']);
+      //  });
+        print_r(App::environment('APP_LOG'));
+        //print_r('yii');
+    }
 }
