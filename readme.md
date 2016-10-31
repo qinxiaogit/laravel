@@ -25,3 +25,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+#php artisan make:migration create_tasks_table --create=tasks 创建数据表命令
+#php artisan migrate 数据库迁移
+#php artisan make:model Task 创建数据库
